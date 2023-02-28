@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CS 194-26 Project 4 | Yanhui Chen</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://mikey666666.github.io/favicon.ico?v=1677546170065">
+<link rel="stylesheet" href="https://mikey666666.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="CS194-26: Image Manipulation and Computational Photography
+Fall 2022
+Project 4A: IMAGE WARPING and MOSAICING
+Yanhui Chen..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://mikey666666.github.io">
+        <img src="https://mikey666666.github.io/images/avatar.png?v=1677546170065" class="site-logo">
+        <h1 class="site-title">Yanhui Chen</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Project
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      --
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mikey666666.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CS 194-26 Project 4</h2>
+            <div class="post-date">2022-10-10</div>
+            
+            <div class="post-content" v-pre>
+              <p>CS194-26: Image Manipulation and Computational Photography</p>
+<p>Fall 2022</p>
+<p>Project 4A: IMAGE WARPING and MOSAICING</p>
+<p>Yanhui Chen</p>
+<ol>
+<li>
+<p>Shoot the image<br>
+<img src="https://mikey666666.github.io/post-images/1665617788139.jpg" alt="" loading="lazy"><br>
+Heast minning left<br>
+<img src="https://mikey666666.github.io/post-images/1665617794644.jpg" alt="" loading="lazy"><br>
+Heast minning right<br>
+<img src="https://mikey666666.github.io/post-images/1665712247016.jpg" alt="" loading="lazy"><br>
+study room left<br>
+<img src="https://mikey666666.github.io/post-images/1665712261353.jpg" alt="" loading="lazy"><br>
+study room right</p>
+</li>
+<li>
+<p>Recover Homographies<br>
+<img src="https://mikey666666.github.io/post-images/1665617935998.jpg" alt="" loading="lazy"><br>
+<img src="https://mikey666666.github.io/post-images/1665617978212.jpg" alt="" loading="lazy"><br>
+Above are the equations to solve for homography matrix</p>
+</li>
+<li>
+<p>Warp the image<br>
+<img src="https://mikey666666.github.io/post-images/1665618293694.png" alt="" loading="lazy"><br>
+Here is the Heast minning labeled point image<br>
+<img src="https://mikey666666.github.io/post-images/1665618302202.png" alt="" loading="lazy"><br>
+Above is the warped left image and the original right image<br>
+<img src="https://mikey666666.github.io/post-images/1665712362563.png" alt="" loading="lazy"><br>
+Here is the study room labeled point image<br>
+<img src="https://mikey666666.github.io/post-images/1665712382228.png" alt="" loading="lazy"><br>
+Above is the warped left image and the original right image</p>
+</li>
+<li>
+<p>Blend the image into a mosaic<br>
+<img src="https://mikey666666.github.io/post-images/1665618398104.png" alt="" loading="lazy"><br>
+Blended Heast minning<br>
+<img src="https://mikey666666.github.io/post-images/1665712473545.png" alt="" loading="lazy"><br>
+Blended Study room</p>
+</li>
+</ol>
+<p>What I learned :<br>
+Stitching process and warp process also need to consider the color of the distortion, and interp2 is a good function to use instead of loopping every pixels and transformed by homography matrix.</p>
+<p>Project 4B: FEATURE MATCHING for AUTOSTITCHING</p>
+<p>Implementing Feature Matching:<br>
+<img src="https://mikey666666.github.io/post-images/1666707754860.png" alt="" loading="lazy"><br>
+<img src="https://mikey666666.github.io/post-images/1666707760844.png" alt="" loading="lazy"></p>
+<p>4-point RANSAC Loop:<br>
+Inliers were repeated, and over-compressed image for faster finding the 500 points to warp.</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://mikey666666.github.io/post/cs194-26-project3/">
+                  <h3 class="post-title">
+                    CS194-26 Project3
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

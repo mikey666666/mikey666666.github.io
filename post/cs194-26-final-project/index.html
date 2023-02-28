@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CS194-26 Final Project | Yanhui Chen</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://mikey666666.github.io/favicon.ico?v=1677546170065">
+<link rel="stylesheet" href="https://mikey666666.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="CS194-26: Image Manipulation and Computational Photography
+Fall 2022
+Yanhui Chen
+Project 1: Lightfield Camera
+Overview:
+..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://mikey666666.github.io">
+        <img src="https://mikey666666.github.io/images/avatar.png?v=1677546170065" class="site-logo">
+        <h1 class="site-title">Yanhui Chen</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Project
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      --
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mikey666666.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CS194-26 Final Project</h2>
+            <div class="post-date">2022-12-12</div>
+            
+            <div class="post-content" v-pre>
+              <p>CS194-26: Image Manipulation and Computational Photography</p>
+<p>Fall 2022</p>
+<p>Yanhui Chen</p>
+<p>Project 1: Lightfield Camera</p>
+<p>Overview:<br>
+Lightfields have set of images of an object captured by the same angle. We will &quot;correct&quot; the off-centered images by using lightfield depth refocusing and aperture adjustment</p>
+<p>Depth Refocusing:<br>
+Depth refocusing switches focus from one part to another.<br>
+<img src="https://mikey666666.github.io/post-images/1671007428876.gif" alt="" loading="lazy"></p>
+<p>Aperture Adjustment<br>
+Aperture adjustment selects all the image around the center with the radius defined<br>
+<img src="https://mikey666666.github.io/post-images/1671007822122.gif" alt="" loading="lazy"><br>
+(Radius: 0-8)</p>
+<p>Project 2: Image Quilting for Texture Transfer</p>
+<p>Overview: Image quilting is a technique of stitching the patches of texture image to others by texture synthesis that generates large textures and texture transfer that re-rendering an image.</p>
+<p>random method<br>
+<img src="https://mikey666666.github.io/post-images/1671008887492.png" alt="" loading="lazy"></p>
+<p>Overlapping method<br>
+<img src="https://mikey666666.github.io/post-images/1671009008461.png" alt="" loading="lazy"></p>
+<p>Seam-finding cut<br>
+<img src="https://mikey666666.github.io/post-images/1671008971886.png" alt="" loading="lazy"></p>
+<p>Texture Synthesis:<br>
+minimium cost path:<br>
+<img src="https://mikey666666.github.io/post-images/1671009137551.png" alt="" loading="lazy"><br>
+sythesized image:<br>
+<img src="https://mikey666666.github.io/post-images/1671009132813.png" alt="" loading="lazy"></p>
+<p>algorithm:</p>
+<ol>
+<li>Randomly choose block</li>
+<li>find least overlap error</li>
+<li>cut the error boundary</li>
+</ol>
+<p>Texture transfer:<br>
+Source:<br>
+<img src="https://mikey666666.github.io/post-images/1671009253831.png" alt="" loading="lazy"><br>
+<img src="https://mikey666666.github.io/post-images/1671009259806.png" alt="" loading="lazy"><br>
+Quilting:<br>
+<img src="https://mikey666666.github.io/post-images/1671009237914.png" alt="" loading="lazy"></p>
+<p>Source:<br>
+<img src="https://mikey666666.github.io/post-images/1671009306335.png" alt="" loading="lazy"><br>
+<img src="https://mikey666666.github.io/post-images/1671009318577.png" alt="" loading="lazy"><br>
+Quilting:<br>
+<img src="https://mikey666666.github.io/post-images/1671009339813.png" alt="" loading="lazy"></p>
+<p>Blending:<br>
+<img src="https://mikey666666.github.io/post-images/1671009381842.png" alt="" loading="lazy"></p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://mikey666666.github.io/post/cs194-26-project-5/">
+                  <h3 class="post-title">
+                    CS194-26 Project 5
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

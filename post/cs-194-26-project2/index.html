@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CS 194-26 Project 2 | Yanhui Chen</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://mikey666666.github.io/favicon.ico?v=1677546170065">
+<link rel="stylesheet" href="https://mikey666666.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="CS194-26: Image Manipulation and Computational Photography
+Fall 2022
+Project 2: Fun with Filters and Frequencies!
+Yanhui..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://mikey666666.github.io">
+        <img src="https://mikey666666.github.io/images/avatar.png?v=1677546170065" class="site-logo">
+        <h1 class="site-title">Yanhui Chen</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Project
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      --
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mikey666666.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CS 194-26 Project 2</h2>
+            <div class="post-date">2022-09-13</div>
+            
+            <div class="post-content" v-pre>
+              <p>CS194-26: Image Manipulation and Computational Photography</p>
+<p>Fall 2022</p>
+<p>Project 2: Fun with Filters and Frequencies!</p>
+<p>Yanhui Chen</p>
+<p>Part 1: Fun with Filters<br>
+Part 1.1: Finite Difference Operator</p>
+<p><img src="https://mikey666666.github.io/post-images/1663652495749.png" alt="" loading="lazy"><br>
+<img src="https://mikey666666.github.io/post-images/1663652502502.png" alt="" loading="lazy"><br>
+The partial derivative with x,y direction and combine together and suppress the noise</p>
+<p>Part 1.2: Derivative of Gaussian (DoG) Filter<br>
+<img src="https://mikey666666.github.io/post-images/1663652817095.png" alt="" loading="lazy"><br>
+<img src="https://mikey666666.github.io/post-images/1663652857366.png" alt="" loading="lazy"><br>
+We can see clearer edges across the specific gradient direction of the low frequency image, and only the low frequency part shown by the filter.</p>
+<p><img src="https://mikey666666.github.io/post-images/1663653284106.png" alt="" loading="lazy"><br>
+We confimed that we have same results by comparing one convolution and two convolutions.<br>
+Two convolutions: do blurred convolutions on image first then take the gradient convolutions<br>
+One convolutions: Create a derivative of gaussian filter then do one convolutions on image</p>
+<p>Part 2: Fun with Frequencies!<br>
+Part 2.1: Image &quot;Sharpening&quot;</p>
+<p>Sample result:<br>
+<img src="https://mikey666666.github.io/post-images/1663653458996.png" alt="" loading="lazy"><br>
+The edges and detail patterns of the temple are more clearer.</p>
+<p>My selection result:<br>
+<img src="https://mikey666666.github.io/post-images/1663653477381.png" alt="" loading="lazy"><br>
+Nezuko is more sharpened.</p>
+<p>Part 2.2: Hybrid Images<br>
+Sample hybrid result:<br>
+<img src="https://mikey666666.github.io/post-images/1663653661865.png" alt="" loading="lazy"><br>
+Using color works better for both</p>
+<p>My selection hybrid result:<br>
+<img src="https://mikey666666.github.io/post-images/1663653940791.png" alt="" loading="lazy"><br>
+<img src="https://mikey666666.github.io/post-images/1663653948307.png" alt="" loading="lazy"></p>
+<p>Part 2.4: Multiresolution Blending (a.k.a. the oraple!)</p>
+<p>1.Implement a Gaussian and a Laplacian stack<br>
+2.Create a half ones and half zeros mask from left to right<br>
+3.Apply Gaussian stack on mask and laplacian stack on images<br>
+4.Add the half apple and half orange together after applying mask on images<br>
+5.Iterate from the pyramid to increase the level and see a smoother and sharper result<br>
+<img src="https://mikey666666.github.io/post-images/1663654059173.png" alt="" loading="lazy"></p>
+<p>My selection with blending(left and right)<br>
+<img src="https://mikey666666.github.io/post-images/1663654421709.png" alt="" loading="lazy"></p>
+<p>My selection with blending(top and bottom)<br>
+<img src="https://mikey666666.github.io/post-images/1663654457356.png" alt="" loading="lazy"></p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://mikey666666.github.io/post/yanhuichen-is-good/">
+                  <h3 class="post-title">
+                    CS 194-26 Project 1
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
